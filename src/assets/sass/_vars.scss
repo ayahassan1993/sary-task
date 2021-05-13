@@ -1,0 +1,122 @@
+/* ====== fonts =========== */
+
+@font-face {
+	font-family: 'Inter-Bold';
+	src: url('../fonts/Inter-Bold.eot');
+	src: local('☺'), url('../fonts/Inter-Bold.woff') format('woff'), url('../fonts/Inter-Bold.ttf') format('truetype'), url('../fonts/Inter-Bold.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Inter-Medium';
+	src: url('../fonts/Inter-Medium.eot');
+	src: local('☺'), url('../fonts/Inter-Medium.woff') format('woff'), url('../fonts/Inter-Medium.ttf') format('truetype'), url('../fonts/Inter-Medium.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Inter-Regular';
+	src: url('../fonts/Inter-Regular.eot');
+	src: local('☺'), url('../fonts/Inter-Regular.woff') format('woff'), url('../fonts/Inter-Regular.ttf') format('truetype'), url('../fonts/Inter-Regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+/* ====== Color Palette =========== */
+
+
+$blue:#4A69BB; // blue
+$tc: #444444;  //text color
+$bc: #fff;  //basic color
+$babyBlue : #51C2D5; // baby blue
+$facebook: #3b5998;
+$twitter: #55acee;
+$instagram: #e1306c;
+$googleplus: #dc4e41;
+$youtube: #cd201f;
+$linkedin: #0077b5;
+$behance: #1769ff;
+$pintrest: #bd081c;
+
+/* ====== fonts =========== */
+
+$font-family-regular: 'Inter-Regular';
+$font-family-medium: 'Inter-Medium';
+$font-family-bold: 'Inter-Bold';
+
+
+/* ====== Font Sizes =========== */
+
+$base-font-size: 16px;
+$font-small: 1.2rem;
+$font-big: 1.5rem;
+$font-extra-big: 2rem;
+
+/* ====== Text =========== */
+
+$base-line-height: 24px;
+$letter-space: 1px;
+
+/* ====== padding =========== */
+
+$padding-one: 3rem;
+$padding-two: 2rem;
+$padding-three: 1rem;
+
+/* ====== margin =========== */
+
+$margin-one: 3rem;
+$margin-two: 2rem;
+$margin-three: 1rem;
+
+/* ====== border radius =========== */
+
+$br: 3px;
+
+ /*----------- functions -----------*/
+
+ @mixin scale($a,$b) { // scale animation
+   -webkit-transform: scale($a,$b);
+   -moz-transform: scale($a,$b);
+   -o-transform: scale($a,$b);
+      transform: scale($a,$b);
+ }
+ @mixin tform($a,$b) { // translate animation
+   -webkit-transform: translate($a,$b);
+   -moz-transform: translate($a,$b);
+   -o-transform: translate($a,$b);
+      transform: translate($a,$b);
+ }
+ @mixin rotatex($a) { // rotatex animation
+   -webkit-transform: rotateX($a);
+   -moz-transform: rotateX($a);
+   -o-transform: rotateX($a);
+      transform: rotateX($a);
+ }
+ @mixin rotatey($a) { // rotatey animation
+   -webkit-transform: rotateY($a);
+   -moz-transform: rotateY($a);
+   -o-transform: rotateY($a);
+      transform: rotateY($a);
+ }
+ @mixin trans($a) { // transition
+   -webkit-transition: all $a ease-in-out;
+   -moz-transition: all $a ease-in-out;
+   -o-transition: all $a ease-in-out;
+      transition: all $a ease-in-out;
+ }
+ @mixin skew($a,$b) { // skew animate
+   -webkit-transform: skew($a,$b);
+   -moz-transform: skew($a,$b);
+   -o-transform: skew($a,$b);
+      transform: skew($a,$b);
+ }
+ @mixin manimate($a,$b,$c,$d,$e,$f,$g,$h) {
+   -webkit-transform: rotatex($a) rotatey($b) translate($c,$d)  scale($e,$f) skew($g,$h);
+   -moz-transform: rotatex($a) rotatey($b) translate($c,$d)  scale($e,$f) skew($g,$h);
+   -o-transform: rotatex($a) rotatey($b) translate($c,$d)  scale($e,$f) skew($g,$h);
+      transform: rotatex($a) rotatey($b) translate($c,$d)  scale($e,$f) skew($g,$h);
+ }

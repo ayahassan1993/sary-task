@@ -1,0 +1,23 @@
+<section class="bg-white p-0 width-300">
+    <h1 class="p_2 text-center text-uppercase">Filters</h1>
+    <hr style="border-width: 3px;">
+    <div class="p-2">
+        <form>
+            <div class="row">
+                <input type="text">
+            </div>
+            <div class="row">
+                <input type="text" name="" id="">
+            </div>
+            <div class="row">
+                <mat-form-field appearance="fill">
+                    <mat-label>State</mat-label>
+                    <mat-select>
+                      <mat-option>None</mat-option>
+                      <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+            </div>
+        </form>
+    </div>
+</section>
