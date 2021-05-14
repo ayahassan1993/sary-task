@@ -1,14 +1,12 @@
-<section class="p_2 bg-light">
-  <ng-sidebar-container style="height: 100vh">
- 
-    <ng-sidebar [(opened)]="_opened" class="ng-sidebar--left" mode="slide">
-      <app-sidebar></app-sidebar>
-    </ng-sidebar>
-     
-    <div ng-sidebar-content class="ng-sidebar__content--animate	">
-      <button (click)="_toggleSidebar()">Toggle sidebar</button>
+<section class="p_2 bg-light min-vh-100">
+  <mat-drawer-container class="w-100 h-100 position-static" >
+    <mat-drawer #drawer class="example-sidenav p-0" mode="side" [opened]='showSidebar' style="top: 2rem;">
+      <app-sidebar  (toggleSidebar)='toggleSidebar()'></app-sidebar>
+    </mat-drawer>
+    <div>
+      <app-heros-table #heros_table (toggleSidebar)='toggleSidebar()'></app-heros-table>
     </div>
   
-  </ng-sidebar-container>
+  </mat-drawer-container>
 </section>
 

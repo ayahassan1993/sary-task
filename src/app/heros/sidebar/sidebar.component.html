@@ -1,23 +1,41 @@
-<section class="bg-white p-0 width-300">
-    <h1 class="p_2 text-center text-uppercase">Filters</h1>
-    <hr style="border-width: 3px;">
-    <div class="p-2">
-        <form>
-            <div class="row">
-                <input type="text">
-            </div>
-            <div class="row">
-                <input type="text" name="" id="">
-            </div>
-            <div class="row">
-                <mat-form-field appearance="fill">
-                    <mat-label>State</mat-label>
-                    <mat-select>
-                      <mat-option>None</mat-option>
-                      <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
-                    </mat-select>
-                  </mat-form-field>
-            </div>
-        </form>
+<section class="bg-white p-0 width-285">
+  <div class="text-right mt_1 mr_1" *ngIf="close">
+    <img class="m-width-20" src="assets/images/close.svg" alt="icon" (click)="toggle($event)" >
+  </div>
+  <h1 class="p_2 text-center text-uppercase">Filters</h1>
+  <hr style="border-width: 3px;">
+  <form class="p_2" [formGroup]="f" (submit)="submit()">
+    <div class="row mb-3">
+      <input formControlName="email" type="text" placeholder="Email">
     </div>
+    <div class="row mb-3">
+      <input formControlName="phone" type="text" placeholder="Phone">
+    </div>
+    <div class="row mb-3">
+      <input formControlName="name" type="text" placeholder="Name">
+    </div>
+    <div class="row mb-3">
+      <input formControlName="company" type="text" placeholder="Company">
+    </div>
+    <div class="row mb-3">
+      <mat-form-field appearance="fill" class="w-100 bg-transparent">
+        <mat-label>Country</mat-label>
+        <mat-select formControlName="country">
+          <mat-option>None</mat-option>
+          <mat-option *ngFor="let state of countries" [value]="state.Alpha3Code">{{state.Name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="row mb-3">
+      <mat-form-field class="w-100">
+        <input matInput [matDatepicker]="picker" placeholder="Date" formControlName="date" value="test">
+        <mat-datepicker-toggle matSuffix [for]="picker" ></mat-datepicker-toggle>
+        <mat-datepicker #picker ></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div class="d-flex justify-content-around">
+      <button class="btn-primary border-0 mr-3"><img class="m-width-20 vm mr-2" src="assets/images/filter.svg" alt="icon">Filter</button>
+      <button class="btn-danger border-0" (click)="reset()">Reset</button>
+    </div>
+  </form>
 </section>

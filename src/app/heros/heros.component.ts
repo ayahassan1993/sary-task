@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-heros',
@@ -6,12 +7,20 @@ import { Component, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./heros.component.scss']
 })
 export class HerosComponent implements OnInit {
-  _opened: boolean = true;
-  constructor() { }
+  @ViewChild('drawer') drawer;
+  showSidebar = true;
+  constructor() { 
+    if(window.innerWidth < 750){
+      this.showSidebar = false
+    }
+  }
 
   ngOnInit(): void {
+
   }
-  _toggleSidebar() {
-    this._opened = !this._opened;
+
+  toggleSidebar(){
+    this.drawer.toggle();
   }
+
 }

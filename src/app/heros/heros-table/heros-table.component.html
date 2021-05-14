@@ -1,0 +1,43 @@
+<section class="pt-0 pb-0 plr_2">
+  <div class="bg-white">
+    <header class="plr_1 d-flex justify-content-between align-items-center">
+      <p class="m-0 ptb_1 font-medium" style="padding-right: 4rem;border-right: 3px solid #f9f9f9;">Heros</p>
+      <div class="d-inline-flex">
+        <input placeholder="Search" *ngIf="show" type="search" (change)="filterByName($event)">
+        <button *ngIf="!show" class="bg-transparent p-0 border-0 mr-3" (click)="show = !show">
+            <img class="m-width-20" src="assets/images/search.png" alt="icon">
+        </button>
+        <button type="button" mat-button (click)="toggle($event)" class="bg-transparent p-0 border-0">
+          <img class="m-width-20" src="assets/images/menu.svg" alt="icon">
+        </button>
+      </div>
+    </header>
+    <div class="table-responsive">
+      <table class="table">
+        <thead class="bg-light">
+          <tr>
+            <th scope="col" (click)="sortByName()" class="pointer"><img style="max-width: 10px;" class=" vm mr-2" src="assets/images/down-arrow.svg" alt="icon">Name</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Email</th>
+            <th scope="col">Date</th>
+            <th scope="col">Country</th>
+            <th scope="col">Company</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let hero of filterHeros">
+            <th scope="col">{{hero?.name}}</th>
+            <th scope="col">{{hero?.phone}}</th>
+            <th scope="col">{{hero?.email}}</th>
+            <th scope="col">{{hero?.date | date}}</th>
+            <th scope="col">{{hero?.country}}</th>
+            <th scope="col">{{hero?.company}}</th>
+          </tr>
+        </tbody>
+      </table>
+      <p class="text-center w-100" *ngIf="filterHeros.length == 0">
+        No Data Found
+      </p>
+    </div>
+  </div>
+</section>
