@@ -1,15 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
+import { baseUrl } from 'src/environments/environment';
 @Injectable({
     providedIn: 'root'
 })
 export class CountriesService {
-    url = "assets/data/countries.json";
-
+    
     constructor(private http: HttpClient) { }
 
     getCountries() {
-        return this.http.get(this.url);
+        return this.http.get(`${baseUrl}/countries.json`);
     }
 }
