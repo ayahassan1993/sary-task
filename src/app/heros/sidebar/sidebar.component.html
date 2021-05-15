@@ -22,7 +22,7 @@
         <mat-label>Country</mat-label>
         <mat-select formControlName="country">
           <mat-option>None</mat-option>
-          <mat-option *ngFor="let state of countries" [value]="state.Alpha3Code">{{state.Name}}</mat-option>
+          <mat-option *ngFor="let state of countries" [value]="state.alpha3Code">{{state.name}}</mat-option>
         </mat-select>
       </mat-form-field>
     </div>

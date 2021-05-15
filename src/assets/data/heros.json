@@ -6,7 +6,10 @@
       "phone": "1-770-736-8031 x56442",
       "website": "hildegard.org",
       "company": "Romaguera-Crona",
-      "country":"DZA",
+      "country": {
+        "name" : "Algeria",
+        "alpha3Code" : "DZA"
+      },
       "date" : "Fri May 21 2021 00:00:00 GMT+0200 (Eastern European Standard Time)"
     },
     {
@@ -16,7 +19,10 @@
       "phone": "1-770-736-8031 x565522",
       "website": "Nathan@yesenia.net",
       "company": "Romaguera-Crona",
-      "country":"ASM",
+      "country": {
+        "name" : "American Samoa",
+        "alpha3Code" : "ASM"
+      },
       "date" : "Wed Mar 10 2021 00:00:00 GMT+0200 (Eastern European Standard Time)"
     },
     {
@@ -26,7 +32,10 @@
       "phone": "1-463-123-4447",
       "website": "ramiro.info",
       "company": "Romaguera-Jacobson",
-      "country":"DZA",
+      "country": {
+        "name" : "Algeria",
+        "alpha3Code" : "DZA"
+      },
       "date" : "Thu Dec 17 2020 00:00:00 GMT+0200 (Eastern European Standard Time)"
     },
     {
@@ -36,7 +45,10 @@
       "phone": "493-170-9623 x156",
       "website": "kale.biz",
       "company": "Robel-Corkery",
-      "country": "AND",
+      "country": {
+        "name" : "Andorra",
+        "alpha3Code" : "AND"
+      },
       "date" : "Fri Dec 25 2020 00:00:00 GMT+0200 (Eastern European Standard Time)"
     },
     {
@@ -46,7 +58,10 @@
       "phone": "(254)954-1289",
       "website": "demarco.info",
       "company": "Keebler LLC",
-      "country":"BWA",
+      "country": {
+        "name" : "Belize",
+        "alpha3Code" : "BLZ"
+      },
       "date" : "Fri Mar 26 2021 00:00:00 GMT+0200 (Eastern European Standard Time)"
     },
     {
@@ -56,7 +71,10 @@
       "phone": "1-477-935-8478 x6430",
       "website": "ola.org",
       "company": "Considine-Lockman",
-      "country":"BWA",
+      "country": {
+        "name" : "Belize",
+        "alpha3Code" : "BLZ"
+      },
       "date" : "5/5/2021"
     },
     {
@@ -66,7 +84,10 @@
       "phone": "210.067.6132",
       "website": "elvis.io",
       "company": "Johns Group",
-      "country":"ASM",
+      "country": {
+        "name" : "American Samoa",
+        "alpha3Code" : "ASM"
+      },
       "date" : "Tue Mar 30 2021 00:00:00 GMT+0200 (Eastern European Standard Time)"
     },
     {
@@ -76,7 +97,10 @@
       "phone": "586.493.6943 x140",
       "website": "jacynthe.com",
       "company":"Abernathy Group",
-      "country":"AND",
+      "country": {
+        "name" : "Andorra",
+        "alpha3Code" : "AND"
+      },
       "date" : "Wed Apr 21 2021 00:00:00 GMT+0200 (Eastern European Standard Time)"
     }
   ]

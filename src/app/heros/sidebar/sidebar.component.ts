@@ -39,7 +39,7 @@ export class SidebarComponent implements OnInit {
   getCountries(){
     this.countriesService.getCountries().subscribe(
       (res : any) =>{
-        this.countries = res.Response;
+        this.countries = res;
       }
     )
   }
@@ -51,7 +51,6 @@ export class SidebarComponent implements OnInit {
         params[x] = this.f.value[x]
       }
     })
-    console.log(params);
     let nav_values : NavigationExtras = {
       queryParams : {
         ...params

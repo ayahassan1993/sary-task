@@ -42,7 +42,7 @@ export class HerosTableComponent implements OnInit {
     this.filterHeros = this.heros.filter((data: any) =>
       (this.params.name ? data.name.toLowerCase().includes(this.params.neme.toLowerCase()) : data) &&
       (this.params.email ? data.email.toLowerCase().includes(this.params.email.toLowerCase()) : data) &&
-      (this.params.country ? data.country.toLowerCase().includes(this.params.country.toLowerCase()) : data) &&
+      (this.params.country ? data.country.alpha3Code.toLowerCase().includes(this.params.country.toLowerCase()) : data) &&
       (this.params.Company ? data.Company.toLowerCase().includes(this.params.Company.toLowerCase()) : data) &&
       (this.params.date ? data.date == this.params.date : data) &&
       (this.params.phone ? data.phone.toLowerCase().includes(this.params.phone.toLowerCase()) : data)

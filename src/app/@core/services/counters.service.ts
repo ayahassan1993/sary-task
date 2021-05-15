@@ -9,6 +9,6 @@ export class CountriesService {
     constructor(private http: HttpClient) { }
 
     getCountries() {
-        return this.http.get(`${baseUrl}/countries.json`);
+        return this.http.get('https://restcountries.eu/rest/v2/all');
     }
 }
