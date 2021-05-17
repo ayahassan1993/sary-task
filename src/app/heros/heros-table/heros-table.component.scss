@@ -1,0 +1,7 @@
+.arrow{
+    transition: all ease-in-out .3s;
+    max-width: 10px;
+    &._des{
+    transform: rotate(180deg);
+    }
+}

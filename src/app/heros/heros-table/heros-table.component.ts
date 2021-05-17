@@ -8,7 +8,7 @@ import { HerosModule } from './../heros.module';
 @Component({
   selector: 'app-heros-table',
   templateUrl: './heros-table.component.html',
-  styleUrls: ['./heros-table.component.css']
+  styleUrls: ['./heros-table.component.scss']
 })
 
 export class HerosTableComponent implements OnInit {
@@ -17,6 +17,8 @@ export class HerosTableComponent implements OnInit {
   filterHeros: HerosModule[] = [];
   params;
   show = false;
+  nameSort = 'ascending'
+  filterdKeyword = ''
   constructor(private herosServ: HerosService, private heroHelper: HeroHelper, private router: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -31,36 +33,40 @@ export class HerosTableComponent implements OnInit {
     this.herosServ.getHeros().subscribe(
       (res) => {
         this.heros = this.heroHelper.setheros(res);
-        if (Object.keys(this.params).length == 0)
-          this.filterHeros = this.heros
-        else
+        if (Object.keys(this.params).length > 0 || this.filterdKeyword.length > 0) 
           this.filterData();
+        else
+          this.filterHeros = this.heros;
       }
     )
   }
+
   filterData() {
+    console.log(this.filterdKeyword)
     this.filterHeros = this.heros.filter((data: any) =>
-      (this.params.name ? data.name.toLowerCase().includes(this.params.neme.toLowerCase()) : data) &&
+      (this.params.name ? data.name.toLowerCase().includes(this.params.name.toLowerCase()) : data) &&
+      (this.filterdKeyword.length > 0 ? data.name.toLowerCase().includes(this.filterdKeyword.toLowerCase()) : data) &&
       (this.params.email ? data.email.toLowerCase().includes(this.params.email.toLowerCase()) : data) &&
       (this.params.country ? data.country.alpha3Code.toLowerCase().includes(this.params.country.toLowerCase()) : data) &&
-      (this.params.Company ? data.Company.toLowerCase().includes(this.params.Company.toLowerCase()) : data) &&
+      (this.params.company ? data.company.toLowerCase().includes(this.params.company.toLowerCase()) : data) &&
       (this.params.date ? data.date == this.params.date : data) &&
       (this.params.phone ? data.phone.toLowerCase().includes(this.params.phone.toLowerCase()) : data)
     )
-  }
-
-  filterByName(event){
-    this.filterHeros = this.filterHeros.filter((data: any) => data.name.toLowerCase().includes(event.target.value.toLowerCase()));
-    this.show = false;
   }
 
   toggle(event) {
     this.toggleSidebar.emit(event);
   }
 
-  sortByName(){
-    this.filterHeros = this.filterHeros.sort((a : any, b : any) => a.name !== b.name ? a.name < b.name ? -1 : 1 : 0);
-
+  sortByName() {
+    if (this.nameSort == 'ascending') {
+      this.filterHeros = this.filterHeros.sort((a: any, b: any) => a.name !== b.name ? a.name < b.name ? -1 : 1 : 0);
+      this.nameSort = 'descending';
+    }
+    else {
+      this.filterHeros = this.filterHeros.sort((a: any, b: any) => a.name !== b.name ? a.name > b.name ? -1 : 1 : 0);
+      this.nameSort = 'ascending';
+    }
   }
 
 }

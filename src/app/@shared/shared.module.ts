@@ -6,7 +6,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatTableModule} from '@angular/material/table';
 import { HeroHelper } from '../@core/models/helpers/hero.helper';
 
@@ -22,6 +22,7 @@ import { HeroHelper } from '../@core/models/helpers/hero.helper';
     MatDatepickerModule,
     MatNativeDateModule,
     MatInputModule,
+    FormsModule,
     ReactiveFormsModule,
   ],
   exports:[
@@ -31,6 +32,7 @@ import { HeroHelper } from '../@core/models/helpers/hero.helper';
     MatDatepickerModule,
     MatNativeDateModule,
     MatInputModule,
+    FormsModule,
     ReactiveFormsModule
   ],
   providers :[

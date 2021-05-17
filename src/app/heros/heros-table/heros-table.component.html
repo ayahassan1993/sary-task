@@ -3,11 +3,12 @@
     <header class="plr_1 d-flex justify-content-between align-items-center">
       <p class="m-0 ptb_1 font-medium" style="padding-right: 4rem;border-right: 3px solid #f9f9f9;">Heros</p>
       <div class="d-inline-flex">
-        <input placeholder="Search" *ngIf="show" type="search" (change)="filterByName($event)">
-        <button *ngIf="!show" class="bg-transparent p-0 border-0 mr-3" (click)="show = !show">
-            <img class="m-width-20" src="assets/images/search.png" alt="icon">
+        <input placeholder="Search" [(ngModel)]="filterdKeyword" *ngIf="show" type="search" (keyup)="getHeros()">
+        <button class="bg-transparent p-0 border-0 mr-3" (click)="show = !show">
+            <img *ngIf="!show" class="m-width-20" src="assets/images/search.png" alt="icon">
+            <img *ngIf="show" class="m-width-20" src="assets/images/close.svg" alt="icon">
         </button>
-        <button type="button" mat-button (click)="toggle($event)" class="bg-transparent p-0 border-0">
+        <button type="button" (click)="toggle($event)" class="bg-transparent p-0 border-0">
           <img class="m-width-20" src="assets/images/menu.svg" alt="icon">
         </button>
       </div>
@@ -16,7 +17,7 @@
       <table class="table">
         <thead class="bg-light">
           <tr>
-            <th scope="col" (click)="sortByName()" class="pointer"><img style="max-width: 10px;" class=" vm mr-2" src="assets/images/down-arrow.svg" alt="icon">Name</th>
+            <th scope="col" (click)="sortByName()" class="pointer"><img [class._des]="nameSort == 'descending'" class="arrow vm mr-2" src="assets/images/down-arrow.svg" alt="icon">Name</th>
             <th scope="col">Phone</th>
             <th scope="col">Email</th>
             <th scope="col">Date</th>
